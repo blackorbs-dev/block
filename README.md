@@ -2,14 +2,6 @@
 
 A clean and structured Flutter mobile app built as part of a mobile developer assessment. The task involved implementing a pixel-perfect onboarding and authentication flow from Figma, integrating API authentication, and managing session state with secure PIN login.
 
-## 📝 Challenge Requirements
-
-- Build a pixel-perfect UI from the provided Figma design
-- Implement onboarding and auth flow
-- Store user session securely and use PIN-based login after app restart
-- Fetch and display a secret message post-login
-- Add meaningful animations and handle edge cases
-
 ## 🚀 Features
 
 - Onboarding screens
