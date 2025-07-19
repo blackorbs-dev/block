@@ -16,7 +16,7 @@ class SignupBloc extends Bloc<AuthEvent, AuthState> {
     required AuthRepository authRepository,
     required AccountRepository accountRepository
   }) : _authRepository = authRepository, _accountRepository = accountRepository,
-        super(const AuthState.unauthenticated()) {
+        super(const AuthState.initial()) {
     on<Register>(_register);
     on<ResetError>(_onResetError);
     on<UpdateEmail>(_onUpdateEmail);
@@ -28,7 +28,7 @@ class SignupBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(actionState: const ActionState.loading()));
     final response = await _authRepository.register(state.authInfo);
     response.onSuccess((user) {
-      emit(AuthState.authenticated());
+      emit(state.copyWith(authenticated: true));
       _accountRepository.addUser(user);
     }).onError((error) {
       emit(state.copyWith(actionState: ActionState.error(error.message())));

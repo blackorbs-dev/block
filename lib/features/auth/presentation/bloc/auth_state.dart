@@ -7,16 +7,13 @@ part 'auth_state.freezed.dart';
 
 @freezed
 class AuthState with _$AuthState {
-  const AuthState._({
+  const AuthState.initial({
     this.actionState = const ActionState.idle(),
     this.authInfo = AuthInfo.empty,
     this.checked = false,
-    this.enabled = false
+    this.enabled = false,
+    this.authenticated = false,
   });
-
-  // const AuthState.initial() : this._();
-  const AuthState.authenticated() : this._();
-  const AuthState.unauthenticated() : this._();
 
   @override
   final ActionState actionState;
@@ -26,6 +23,8 @@ class AuthState with _$AuthState {
   final bool checked; // checkbox state
   @override
   final bool enabled; // button state
+  @override
+  final bool authenticated;
 }
 
 

@@ -8,6 +8,7 @@ import 'package:block/features/dashboard/presentation/pages/dashboard.dart';
 import 'package:block/features/dashboard/presentation/state_provider.dart';
 import 'package:block/features/get_started/screen.dart';
 import 'package:block/navigation/transition_builders.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/onboarding/screen.dart';
@@ -24,7 +25,9 @@ final router = GoRouter(
       ),
       redirect: (context, state) async{
         final storage = getIt<SecureStorage>();
-        if (await storage.read(SecureKeys.accessToken) != null) {
+        final token = await storage.read(SecureKeys.accessToken);
+        FlutterNativeSplash.remove();
+        if (token != null) {
           return Route.login;
         }
         return null;

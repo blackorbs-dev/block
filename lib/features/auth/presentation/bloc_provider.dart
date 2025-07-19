@@ -34,7 +34,7 @@ Widget authBlocProvider(Widget child){
               Fluttertoast.showToast(msg: message);
               context.read<LoginBloc>().add(const AuthEvent.resetError());
             }
-            if(state == const AuthState.authenticated()){
+            if(state.authenticated){
               Fluttertoast.showToast(msg: 'Login successful');
               context.pushReplacement(Route.dashboard);
             }
@@ -46,7 +46,7 @@ Widget authBlocProvider(Widget child){
               Fluttertoast.showToast(msg: message);
               context.read<SignupBloc>().add(const AuthEvent.resetError());
             }
-            if(state == const AuthState.authenticated()){
+            if(state.authenticated){
               Fluttertoast.showToast(msg: 'Registration successful');
               context.pushReplacement(Route.dashboard);
             }
