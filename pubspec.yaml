@@ -1,0 +1,67 @@
+name: block
+description: "Payment app"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dio: ^5.8.0+1
+  retrofit: ^4.6.0
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  flutter_animate: ^4.5.2
+  flutter_bloc: ^9.1.1
+  flutter_svg: ^2.2.0
+  flutter_secure_storage: ^9.2.4
+  get_it: ^8.0.3
+  go_router: ^16.0.0
+  smooth_page_indicator: ^1.2.1
+  fluttertoast: ^8.2.12
+  pinput: ^5.0.1
+  flutter_native_splash: ^2.4.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  retrofit_generator: ^9.6.0
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.5
+  freezed: ^3.0.6
+
+flutter:
+
+  uses-material-design: true
+
+  #--------------- LOCAL ASSETS ------------------#
+  assets:
+    - assets/icons/
+    - assets/images/
+
+  #--------------- LOCAL FONTS ------------------#
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/rubik_variable.ttf
+    - family: NicoMoji
+      fonts:
+        - asset: assets/fonts/nico_moji_regular.ttf
+          weight: 400
+
+#--------- Configure Splash Screen -----------#
+flutter_native_splash:
+  color: "#000000"
+  image: assets/images/splash.png
+
+  android_12:
+    color: "#000000"
+    image: assets/images/splash_12.png
+
